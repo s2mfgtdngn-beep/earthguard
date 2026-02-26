@@ -90,8 +90,11 @@ const nearest = asteroids[0];
 
 document.getElementById("name").innerText = "Nearest Asteroid: " + nearest.name;
 document.getElementById("distance").innerText = "Distance: " + nearest.distance.toLocaleString() + " km";
-document.getElementById("speed").innerText = "Velocity: " + nearest.speed.toLocaleString() + " km/h";
+document.getElementById("speed").innerText = "Velocity: " + nearest.speed.toLocaleString() + " km/const visual = document.getElementById("asteroidVisual");
 
+  const sizeScale = Math.min(nearest.size / 2, 200);
+visual.style.width = sizeScale + "px";
+visual.style.height = sizeScale + "px";
 function updateCountdown() {
   const now = new Date();
   const target = new Date(nearest.date);
