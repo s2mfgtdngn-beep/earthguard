@@ -106,15 +106,26 @@ function updateCountdown() {
 }
 
 function setDangerColor(distance) {
-  let color = "#2ECC71";
 
-  if (distance < 2000000) color = "#E74C3C";
-  else if (distance < 7000000) color = "#E67E22";
-  else if (distance < 15000000) color = "#F1C40F";
+  let color1 = "#2ECC71"; // green
+  let color2 = "#145A32";
 
-  document.body.style.background = color;
+  if (distance < 2000000) {
+    color1 = "#E74C3C";  // red
+    color2 = "#641E16";
+  }
+  else if (distance < 7000000) {
+    color1 = "#E67E22";  // orange
+    color2 = "#6E2C00";
+  }
+  else if (distance < 15000000) {
+    color1 = "#F1C40F";  // yellow
+    color2 = "#7D6608";
+  }
+
+  document.body.style.background =
+    `radial-gradient(circle at top, ${color1}, ${color2})`;
 }
-
 updateCountdown();
 setInterval(updateCountdown, 60000);
 
